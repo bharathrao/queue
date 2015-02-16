@@ -1,6 +1,6 @@
 {
   "name": "queue.js",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Double Ended Queue with O(1) performance and array-like api",
   "main": "lib/Queue.js",
   "scripts": {

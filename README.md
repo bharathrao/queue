@@ -1,8 +1,8 @@
-# queue
+# Queue
 
 Queue is a data structure which implements an array friendly interface
 
-# Class Methods
+## Class Methods
 
 ```javascript
 Queue.prototype.push(data)
@@ -13,7 +13,7 @@ Queue.prototype.forEach(func, condition)
 Queue.prototype.concat()
 ```
 
-# Getters
+## Getters
 
 ```javascript
 head    // points to head node. head.data points to queue data at head
@@ -21,14 +21,14 @@ tail    // same as above for tail
 length  // number of items in queue
 ```
 
-# Example
+## Example
 
 ```javascript
 
 var Queue = require('queue.js')
 
 ```
-# Create empty queue
+## Create empty queue
 
 ```javascript
 
@@ -38,7 +38,7 @@ console.log('q.head:', q.head); // should be undefined
 console.log('q.tail:', q.tail); // should be undefined
 
 ```
-# Instantiation
+## Instantiation
 
 ```javascript
 
@@ -54,13 +54,13 @@ var q3 = new Queue();
 
 ```
 
-# concatenate multiple queues
+## concatenate multiple queues
 
 ```javascript
 var allq = new Queue().concat(q1).concat(q2).concat(q3);
 ```
 
-# peek
+## peek
 
 ```javascript
 
@@ -71,7 +71,7 @@ console.log('allq.tail',      allq.tail.data);      // 4
 
 ```
 
-# remove from queue
+## remove from queue
 
 ```javascript
 
@@ -79,7 +79,7 @@ console.log('allq.tail',      allq.tail.data);      // 4
 console.log('tail and head', allq.pop(), allq.shift()); // 4, 1
 
 ```
-# remove an arbitrary node
+## remove an arbitrary node
 
 ```javascript
 
@@ -87,17 +87,17 @@ var q4 = new Queue().push(1).push(2).push(3);
 q4.remove(q4.head.next);
 
 ```
-# forEach: General purpose iterator
+## forEach: General purpose iterator
 
 ```javascript
 
 var i = 0;
 allq.forEach(function(a) {
-    console.log('Item at', i, 'is', a);
+    console.log('Item at', i++, 'is', a);
 })
 
 ```
-# map from forEach. Use similarly for filter, fold, etc.
+## map from forEach. Use similarly for filter, fold, etc.
 
 ```javascript
 
@@ -110,7 +110,7 @@ allq.forEach(function(a) {
 console.log('Squares', qmap);
 
 ```
-# iterate until condition met
+## iterate until condition met
 
 ```javascript
 var condition = function(a) { return a < 4; }
@@ -123,7 +123,7 @@ allq.forEach(function(a) {
 
 Look at the test suite for more example
 
-# How to contribute
+## How to contribute
 
 This repository follows (more or less) the [Felix's Node.js Style Guide](http://nodeguide.com/style.html), your contribution must be consistent with this style.
 
