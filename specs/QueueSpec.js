@@ -188,4 +188,36 @@ describe("Test Queue", function() {
     expect(q.head.next.next.next.data).to.equal(4);
   })
 
+  it("should update length on changes", function() {
+    var appendage1 = new Queue().push(4).push(5).push(6);
+    var appendage2 = new Queue().push(7).push(8).push(9);
+    var q = new Queue();
+    expect(q.length).to.equal(0);
+
+    q.push(1);
+    expect(q.length).to.equal(1);
+    q.push(2).push(3);
+    expect(q.length).to.equal(3);
+
+    q.shift();
+    expect(q.length).to.equal(2);
+
+    q.pop();
+    expect(q.length).to.equal(1);
+
+    q.pop();
+    expect(q.length).to.equal(0);
+
+    q.concat(new Queue().push(1).push(2).push(3))
+      .concat(appendage1)
+      .concat(appendage2);
+    expect(q.length).to.equal(9);
+
+    q.remove(q.head);
+    expect(q.length).to.equal(8);
+    q.remove(q.tail);
+    expect(q.length).to.equal(7);
+    q.remove(q.head.next);
+    expect(q.length).to.equal(6);
+  })
 })

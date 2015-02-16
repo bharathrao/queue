@@ -13,11 +13,12 @@ Queue.prototype.forEach(func, condition)
 Queue.prototype.concat()
 ```
 
-# Class Getters
+# Getters
 
 ```javascript
-Queue.prototype.head
-Queue.prototype.tail
+head    // points to head node. head.data points to queue data at head
+tail    // same as above for tail
+length  // number of items in queue
 ```
 
 # Example
@@ -53,7 +54,7 @@ var q3 = new Queue();
 
 ```
 
-# concatenate multiple queues in O(1) performance
+# concatenate multiple queues
 
 ```javascript
 var allq = new Queue().concat(q1).concat(q2).concat(q3);
@@ -63,10 +64,10 @@ var allq = new Queue().concat(q1).concat(q2).concat(q3);
 
 ```javascript
 
-console.log('allq.head', allq.head.data); // 1
+console.log('allq.head',      allq.head.data);      // 1
 console.log('allq.head.next', allq.head.next.data); // 2
-console.log('allq.tail.prev.data', allq.tail.prev.data); // 5
-console.log('allq.tail.data', allq.tail.data); // 4
+console.log('allq.tail.prev', allq.tail.prev.data); // 5
+console.log('allq.tail',      allq.tail.data);      // 4
 
 ```
 
@@ -74,11 +75,19 @@ console.log('allq.tail.data', allq.tail.data); // 4
 
 ```javascript
 
+// pop removes from end of queue, shift from start
 console.log('tail and head', allq.pop(), allq.shift()); // 4, 1
 
 ```
+# remove an arbitrary node
 
-# Traverse: Use this to implement map, filter, fold, etc.
+```javascript
+
+var q4 = new Queue().push(1).push(2).push(3);
+q4.remove(q4.head.next);
+
+```
+# forEach: General purpose iterator
 
 ```javascript
 
@@ -87,14 +96,10 @@ allq.forEach(function(a) {
     console.log('Item at', i, 'is', a);
 })
 
-# iterate until condition met
-var condition = function(a) { return a < 4; }
+```
+# map from forEach. Use similarly for filter, fold, etc.
 
-allq.forEach(function(a) {
-  console.log('Must be < 4:', a);
-}, condition);
-
-# Create a map
+```javascript
 
 var qmap = [];
 
@@ -103,6 +108,16 @@ allq.forEach(function(a) {
 })
 
 console.log('Squares', qmap);
+
+```
+# iterate until condition met
+
+```javascript
+var condition = function(a) { return a < 4; }
+
+allq.forEach(function(a) {
+  console.log('Must be < 4:', a);
+}, condition);
 
 ```
 
