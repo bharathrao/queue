@@ -1,0 +1,27 @@
+{
+  "name": "queue.js",
+  "version": "0.1.0",
+  "description": "Double Ended Queue with O(1) performance and array-like api",
+  "main": "lib/Queue.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bharathrao/queue"
+  },
+  "keywords": [
+    "queue",
+    "list",
+    "dqueue"
+  ],
+  "author": "Bharath Rao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bharathrao/queue/issues"
+  },
+  "homepage": "https://github.com/bharathrao/queue",
+  "devDependencies": {
+    "expect.js": "^0.3.1"
+  }
+}
