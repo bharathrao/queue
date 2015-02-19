@@ -5,12 +5,12 @@ Queue is a data structure which implements an array friendly interface
 ## Class Methods
 
 ```javascript
-Queue.prototype.push(data)
-Queue.prototype.pop()
-Queue.prototype.unshift(data)
-Queue.prototype.shift()
-Queue.prototype.forEach(func, condition)
-Queue.prototype.concat()
+push(data)
+pop()
+unshift(data)
+shift()
+forEach(func, condition)
+concat()
 ```
 
 ## Getters
@@ -28,17 +28,17 @@ length  // number of items in queue
 var Queue = require('queue.js')
 
 ```
-## Create empty queue
+### Create empty queue
 
 ```javascript
 
 var q = new Queue();
 
-console.log('q.head:', q.head); // should be undefined
-console.log('q.tail:', q.tail); // should be undefined
+console.log('q.head:', q.head); // should be un defined
+console.log('q.tail:', q.tail); // should be un defined
 
 ```
-## Instantiation
+### Instantiation
 
 ```javascript
 
@@ -54,13 +54,13 @@ var q3 = new Queue();
 
 ```
 
-## concatenate multiple queues
+### concatenate multiple queues
 
 ```javascript
 var allq = new Queue().concat(q1).concat(q2).concat(q3);
 ```
 
-## peek
+### peek
 
 ```javascript
 
@@ -79,7 +79,7 @@ console.log('allq.tail',      allq.tail.data);      // 4
 console.log('tail and head', allq.pop(), allq.shift()); // 4, 1
 
 ```
-## remove an arbitrary node
+### remove an arbitrary node
 
 ```javascript
 
@@ -87,7 +87,7 @@ var q4 = new Queue().push(1).push(2).push(3);
 q4.remove(q4.head.next);
 
 ```
-## forEach: General purpose iterator
+### forEach: General purpose iterator
 
 ```javascript
 
@@ -97,7 +97,7 @@ allq.forEach(function(a) {
 })
 
 ```
-## map from forEach. Use similarly for filter, fold, etc.
+### map using forEach. Use similarly for filter, fold, etc.
 
 ```javascript
 
@@ -110,7 +110,7 @@ allq.forEach(function(a) {
 console.log('Squares', qmap);
 
 ```
-## iterate until condition met
+### iterate until condition met
 
 ```javascript
 var condition = function(a) { return a < 4; }
@@ -136,7 +136,7 @@ The test suite is written on top of [visionmedia/mocha](http://visionmedia.githu
 
 _This software is released under the MIT license cited below_.
 
-    Copyright (c) 2015 Bharath Rao, bharath.raoREMOVE_THIS@gmail.com. All Rights Reserved.
+    Copyright (c) 2015 Bharath Rao. All Rights Reserved.
 
     Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation
